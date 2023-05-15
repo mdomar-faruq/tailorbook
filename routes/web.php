@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,10 @@ Route::get('/user', function () {
     return view('user.dashboard');
 });
 
+//login
+Route::get('/login',[HomeController::class,'Login'])->name('login');
+Route::post('/tailor_login',[HomeController::class,'tailore_login'])->name('tailore_login');
 
+//register
+Route::get('/register',[HomeController::class,'register'])->name('register');
+Route::post('/tailore_register',[HomeController::class,'tailore_register'])->name('tailore_register');

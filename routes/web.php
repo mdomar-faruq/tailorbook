@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\GuestController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,17 +18,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.dashboard');
+    return redirect()->route('login');
 });
 
-Route::get('/user', function () {
-    return view('user.dashboard');
-});
+// Route::get('/user', function () {
+//     return view('user.dashboard');
+//     return $x;
+//     return response()->json("data");
+// });
 
-//login
-Route::get('/login',[HomeController::class,'Login'])->name('login');
-Route::post('/tailor_login',[HomeController::class,'tailore_login'])->name('tailore_login');
+//user create
+Route::post('/tailore_register',[GuestController::class,'tailore_register'])->name('tailore_register');
+Route::get('/order_create',[OrderController::class,'order_create'])->name('order_create');
 
-//register
-Route::get('/register',[HomeController::class,'register'])->name('register');
-Route::post('/tailore_register',[HomeController::class,'tailore_register'])->name('tailore_register');
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

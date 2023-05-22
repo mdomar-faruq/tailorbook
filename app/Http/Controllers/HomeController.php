@@ -6,28 +6,23 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function Login()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        return view('login');
+        $this->middleware('auth');
     }
 
-
-    public function tailore_login(Request $request)
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
-
-        //user hoile next processs, na hoile login koru again
-        //dashboard 
-
-        return $request;
-    }
-
-    public function register()
-    {
-        return view('register');
-    }
-
-    public function tailore_register(Request $request)
-    {
-        return $request;
+        return view('admin.dashboard');
     }
 }

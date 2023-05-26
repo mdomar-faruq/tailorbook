@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('catagories', function (Blueprint $table) {
+        Schema::create('punjabi_items', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
+            $table->string('user_id');
+            $table->string('update_id')->nullable();
+            $table->string('title')->unique();
+            $table->bigInteger('rate');
+            $table->integer("status");
+            $table->integer("valid");
             $table->timestamps();
         });
     }
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('catagories');
+        Schema::dropIfExists('punjabi_items');
     }
 };

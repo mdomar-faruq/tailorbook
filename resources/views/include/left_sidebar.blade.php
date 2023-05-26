@@ -1,7 +1,7 @@
         <!-- Menu -->
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
-              <a href="index.html" class="app-brand-link">
+              <a href="{{route('home')}}" class="app-brand-link">
                 <span class="app-brand-logo demo">
                   <svg
                     width="25"
@@ -57,7 +57,7 @@
                     </g>
                   </svg>
                 </span>
-                <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+                <span class="app-brand-text demo menu-text fw-bolder ms-2">TailorBook</span>
               </a>
   
               <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -78,7 +78,7 @@
   
 
               <li class="menu-header small text-uppercase">
-                <span class="menu-header-text">Page</span>
+                <span class="menu-header-text">ORDER</span>
               </li>
 
               <li class="menu-item">
@@ -88,13 +88,13 @@
                 </a>
                 <ul class="menu-sub">
                   <li class="menu-item">
-                    <a href="{{route('order_create')}}" class="menu-link">
-                      <div data-i18n="Account">New Order</div>
+                    <a href="{{route('order_index')}}" class="menu-link">
+                      <div data-i18n="Account">Index</div>
                     </a>
                   </li>
                   <li class="menu-item">
-                    <a href="pages-account-settings-notifications.html" class="menu-link">
-                      <div data-i18n="Notifications">Order List</div>
+                    <a href="{{route('order_create')}}" class="menu-link">
+                      <div data-i18n="Notifications">Create</div>
                     </a>
                   </li>
                 </ul>
@@ -103,17 +103,37 @@
               <li class="menu-item">
                 <a href="#" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                  <div data-i18n="Account Settings">Category</div>
+                  <div data-i18n="Account Settings">Punjabi Item</div>
                 </a>
                 <ul class="menu-sub">
                   <li class="menu-item">
                     {{-- link Index page  --}}
-                    <a href="{{route('cat_index')}}" class="menu-link">
+                    <a href="{{route('punjabi_item_index')}}" class="menu-link">
                       <div data-i18n="Account">Index</div>
                     </a>
                   </li>
                   <li class="menu-item">
-                    <a href="{{route('cat_create')}}" class="menu-link">
+                    <a href="{{route('punjabi_item_create')}}" class="menu-link">
+                      <div data-i18n="Notifications">Create</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="menu-item">
+                <a href="#" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                  <div data-i18n="Account Settings">Paijama Item</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    {{-- link Index page  --}}
+                    <a href="{{route('Paijama_item_index')}}" class="menu-link">
+                      <div data-i18n="Account">Index</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="{{route('Paijama_item_create')}}" class="menu-link">
                       <div data-i18n="Notifications">Create</div>
                     </a>
                   </li>
